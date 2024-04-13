@@ -1,0 +1,9 @@
+{
+	"extends": "@ecdh/typescript-config/react-library.json",
+	"compilerOptions": {
+		"lib": ["dom", "ES2017"],
+		"types": ["jest", "node"]
+	},
+	"include": ["src"],
+	"exclude": ["dist", "build", "node_modules"]
+}

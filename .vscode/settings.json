@@ -1,0 +1,7 @@
+{
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "terminal.integrated.profiles.{{OS}}": {
+        "shellArgs": ["-l", "-c", "export LANG=en_US.UTF-8"]
+    }
+}

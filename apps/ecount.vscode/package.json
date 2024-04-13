@@ -1,0 +1,62 @@
+{
+    "name": "ecount.vscode",
+    "displayName": "Your Extension",
+    "description": "Description of your extension",
+    "version": "0.0.1",
+    "publisher": "ECount",
+    "engines": {
+        "vscode": "^1.60.0"
+    },
+    "activationEvents": [
+        "onStartupFinished"
+    ],
+    "main": "./dist/index.js",
+    "scripts": {
+        "build": "tsup src/index.ts",
+        "clean": "rm -rf dist",
+        "dev": "tsup src/index.ts",
+        "typecheck": "tsc --noEmit",
+        "lint": "eslint src/",
+        "test": "jest",
+        "vscode:prepublish": "npm run build",
+        "watch": "tsc -watch -p ./"
+    },
+    "devDependencies": {
+        "@ecdh/eslint-config": "workspace:*",
+        "@ecdh/jest-presets": "workspace:*",
+        "@ecdh/typescript-config": "workspace:*",
+        "@ecdh/ecountcorp": "workspace:*",
+        "@ecdh/core": "workspace:*",
+        "@ecdh/ui": "workspace:*",
+        "@ecdh/vscode": "workspace:*",
+        "@types/jest": "^29.5.12",
+        "@types/node": "^20.11.24",
+        "@types/vscode": "^1.62.0",
+        "jest": "^29.7.0",
+        "tsup": "^8.0.2",
+        "typescript": "^5.3.3",
+        "ts-jest": "^29.1.2"
+    },
+    "dependencies": {
+        "reflect-metadata": "^0.2.1"
+    },
+    "contributes": {
+        "viewsContainers": {
+            "activitybar": [
+                {
+                    "id": "ecount-developer-hub-sidebar",
+                    "title": "ECount Developer Hub",
+                    "icon": "resources/fire.svg"
+                }
+            ]
+        },
+        "views": {
+            "ecount-developer-hub-sidebar": [
+                {
+                    "id": "ecount-developer-hub-router",
+                    "name": "ECount Developer Hub"
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,32 @@
+{
+    "version": "1.0.0",
+    "configurations": [
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "vscode-jest-tests.v2",
+            //"env": { "NODE_ENV": "test" },
+            "runtimeArgs": [
+                "--inspect-brk",
+                "${workspaceFolder}/packages/ecountcorp/node_modules/jest/bin/jest.js", // Jest 실행 파일의 경로로 변경하세요.
+                "--runInBand", // Jest를 단일 스레드로 실행합니다.(순차 처리)
+                "--runTestsByPath",
+                "${file}"
+            ],
+            "cwd": "${workspaceFolder}/packages/ecountcorp",
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen"
+        },
+        {
+            "name": "Extension",
+            "type": "extensionHost",
+            "request": "launch",
+            "runtimeExecutable": "${execPath}",
+            "args": ["--extensionDevelopmentPath=${workspaceFolder}/apps/ecount.vscode"],
+            "outFiles": ["${workspaceFolder}/apps/ecount.vscode/out/**/*"],
+            "preLaunchTask": "${defaultBuildTask}",
+            "sourceMaps": true,
+            "resolveSourceMapLocations": ["${workspaceFolder}/**", "!**/node_modules/**"]
+        }
+    ]
+}

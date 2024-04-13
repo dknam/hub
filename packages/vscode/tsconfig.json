@@ -1,0 +1,9 @@
+{
+    "extends": "@ecdh/typescript-config/base.json",
+    "compilerOptions": {
+        "lib": ["dom", "ESNext"],
+        "types": ["jest", "node"]
+    },
+    "include": ["src"],
+    "exclude": ["dist", "build", "node_modules"]
+}
